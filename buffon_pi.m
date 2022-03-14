@@ -1,8 +1,8 @@
-l=0.5;      %针的长度
-a=1;        %平行线间距
-N=1000;     %投针总次数
-n=0;        %针与平行线相交的次数
-%绘制平行线
+l=0.5;      %length of needle
+a=1;        %distance in parells
+N=1000;     %total number
+n=0;        %hit number
+
 x=[0:2];
 for i=[0,1,2]
     y=a*i*ones(1,3);
@@ -22,6 +22,7 @@ for j=1:N
     hold on;
     center=(y2+y3)/2;
     d=rem(center,a);
+    %judge
     if(d<=0.5*a)
         if(d<0.5*sin(angel))
             n=n+1;
@@ -33,5 +34,5 @@ for j=1:N
         end
     end
 end
-pisimul=2*l*N/a/n;
+pisimul=2*l*N/(a*n)
 
