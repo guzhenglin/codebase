@@ -4,20 +4,20 @@ import matplotlib.pyplot as pl
 def f(x,x0,y0):
     return np.exp(-x**2)/np.sqrt((x-x0)**2+y0**2)
 
-N=101  # number of points                                               #划分Δx的端点数
-A=1.0  # half-length of the stem                                        #待求的范围
-c=1.0  # determine the unit of filed. c= 1/4piepsilon                   #常数
+N=101  # number of points                                               
+A=1.0  # half-length of the stem                                        
+c=1.0  # determine the unit of filed. c= 1/4piepsilon                   
 
-xx=np.zeros(N)                                                          #创建空数组
-h = 2.0*A/float(N-1)  # integration step                                #积分步长
+xx=np.zeros(N)                                                          
+h = 2.0*A/float(N-1)  # integration step                                
 
-for i in np.arange(0,N,1):                                              #
-    xx[i] = i*h - A    # coordinate aling the x-axis                    #平均分至y轴两侧
+for i in np.arange(0,N,1):                                              
+    xx[i] = i*h - A    # coordinate aling the x-axis                   
 
-xaxis = np.arange(-5.0,5.0,0.2) # the the (x0.y0) points                #等差数组
+xaxis = np.arange(-5.0,5.0,0.2) # the the (x0.y0) points               
 yaxis = np.arange(-5.0,5.0,0.2)
-field=[] # list to store the calculated field.                          #工作区
-for x0 in xaxis:                                                        #计算坐标轴的范围
+field=[] # list to store the calculated field.                       
+for x0 in xaxis:                                                        
     for y0 in yaxis:
         v = 0.0
 #rectangular integration
